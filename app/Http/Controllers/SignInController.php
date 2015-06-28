@@ -10,15 +10,15 @@ use App\Http\Controllers\Controller;
 class SignInController extends Controller
 {
     public function signin(){
-    	return view('welcome');
+    	return view('pages.signin');
     }
 
     public function loggedin(){
-    	return view('welcome');
+    	return view('pages.loggedin');
     }
 
     public function signup(){
-    	return view('welcome');
+    	return view('pages.signup');
     }
 
 }
