@@ -21,4 +21,7 @@ class SignInController extends Controller
     	return view('pages.signup');
     }
 
+    public function create(){
+    	return view('pages.loggedin');
+    }
 }
