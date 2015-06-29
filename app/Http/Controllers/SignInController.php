@@ -11,15 +11,15 @@ use App\User;
 class SignInController extends Controller
 {
     public function signin(){
-    	return view('pages.signin');
+    	return view('auth.signin');
     }
 
     public function loggedin(){
-    	return view('pages.loggedin');
+    	return view('auth.loggedin');
     }
 
     public function signup(){
-    	return view('pages.signup');
+    	return view('auth.signup');
     }
 
     public function create(){
@@ -28,6 +28,6 @@ class SignInController extends Controller
 
     	User::create($input);
 
-    	return view('pages.loggedin');
+    	return view('auth.loggedin');
     }
 }
