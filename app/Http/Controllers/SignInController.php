@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class SignInController extends Controller
 {
@@ -22,6 +23,11 @@ class SignInController extends Controller
     }
 
     public function create(){
+
+    	$input = Request::all();
+
+    	User::create($input);
+
     	return view('pages.loggedin');
     }
 }
