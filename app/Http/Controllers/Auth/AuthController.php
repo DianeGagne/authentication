@@ -22,6 +22,9 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers;
 
+
+    protected $redirectPath = '/loggedin';
+
     /**
      * Create a new authentication controller instance.
      *
@@ -60,5 +63,10 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    protected function postRegister()
+    {
+        return view('auth.loggedin');
     }
 }
