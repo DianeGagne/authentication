@@ -22,9 +22,23 @@
     </div>
 
     <div class="form-group">
-        {!! Form::submit('Sign up!', ['class' => 'btn btn-primary form-control']) !!}
+        {!! Form::submit('Sign in!', ['class' => 'btn btn-primary form-control']) !!}
     </div>
 
     {!! Form::close() !!}
 
+    <a href="{{ URL::route('register') }}" class="btn btn-info btn-block">Register</a>
+
+
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
 @stop
+

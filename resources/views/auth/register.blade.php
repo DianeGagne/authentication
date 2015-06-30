@@ -34,5 +34,16 @@
 
     {!! Form::close() !!}
 
+    <a href="{{ URL::route('login') }}" class="btn btn-info btn-block">Login</a>
+
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 @stop

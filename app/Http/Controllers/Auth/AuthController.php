@@ -65,8 +65,4 @@ class AuthController extends Controller
         ]);
     }
 
-    protected function postRegister()
-    {
-        return view('auth.loggedin');
-    }
 }

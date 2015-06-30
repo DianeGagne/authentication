@@ -18,9 +18,10 @@ class SignInController extends Controller
         $this->middleware('auth');
     }
 
-    public function loggedin(){
+    public function loggedin()
+    {
 
-    	return view('auth.loggedin');
+        return view('auth.loggedin');
     }
 
 }

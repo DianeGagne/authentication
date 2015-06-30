@@ -3,5 +3,7 @@
 @section('content')
 	<h1>Logged in! </h1>
 
-    Hello $user->name()
+    Hello {{ Auth::user()->name }}
+
+    <a href="{{ URL::route('logout') }}" class="btn btn-info btn-block">Logout</a>
 @stop
