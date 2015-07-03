@@ -12,10 +12,12 @@ class CreateBeadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bead', function (Blueprint $table) {
+        Schema::create('beads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('name_description');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
             $table->string('image_file');
         });
     }
@@ -27,6 +29,6 @@ class CreateBeadsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('beads');
     }
 }

@@ -84,6 +84,8 @@ class BeadsController extends Controller
     }
 
     public function getBeads(){
-    return view('beads.beads');
+
+        $beads = \App\beads::all();
+    return $beads;
     }
 }
