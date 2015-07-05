@@ -28,3 +28,4 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //beads routes
 Route::get('beads', ['as' => 'beads', 'uses' => 'Beads\BeadsController@getBeads']);
+Route::get('beads/{id}', 'Beads\BeadsController@show');
