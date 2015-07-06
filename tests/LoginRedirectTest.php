@@ -22,7 +22,7 @@ class LoginRedirectTest extends TestCase
     }
 
     /**
-     * Likewise if we are logged in, should go to the logged in page
+     * Likewise if we are logged in, should go to the logged in page and see the user name
      */
     public function testLoggedInRedirect()
     {
@@ -31,6 +31,10 @@ class LoginRedirectTest extends TestCase
 
         $response = $this->call('GET', 'loggedin');
         $this->see('Logged in');
+
+        //Check that the name is being displayed on the logged in page
+        $this->see('Diane');
+
         return 'tested login';
     }
 }
