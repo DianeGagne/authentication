@@ -41,7 +41,7 @@ class BeadsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified bead.
      *
      * @param  int $id
      * @return Response
@@ -52,41 +52,19 @@ class BeadsController extends Controller
 
         //update the image to contain the full link
         $bead->image_file = 'assets/delica11/'.$bead->image_file.'.jpg';
+
+        //get a list of the finishes
+        //$finish = $bead->finishes->lists('name');
+
+        //return $finish;
         return view('beads.single_bead')->with('bead', $bead);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-
-    }
-
-    /**     * Update the specified resource in storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return Response
+     * Show the specification for all the beads in the db
+     * @return $this
      */
-    public function destroy($id)
-    {
-        //
-    }
-
     public function getBeads()
     {
 
@@ -98,5 +76,6 @@ class BeadsController extends Controller
 
         return view('beads.beads')->with('beads', $beads);
     }
+
 
 }

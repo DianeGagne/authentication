@@ -16,6 +16,10 @@ class CreateBeadsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('name_description');
+            $table->integer('color');
+            $table->integer('red');
+            $table->integer('green');
+            $table->integer('blue');
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
             $table->string('image_file');
@@ -29,6 +33,7 @@ class CreateBeadsTable extends Migration
      */
     public function down()
     {
+       // Schema::drop('beads_finishes');
         Schema::drop('beads');
     }
 }

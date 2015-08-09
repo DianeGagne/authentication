@@ -29,3 +29,5 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 //beads routes
 Route::get('beads', ['as' => 'beads', 'uses' => 'Beads\BeadsController@getBeads']);
 Route::get('beads/{id}', 'Beads\BeadsController@show');
+Route::get('favorites', ['as' => 'favorites', 'uses' => 'Beads\BeadsController@showFavorites']);
+Route::post('favorites', ['as' => 'addFavorites', 'uses' => 'Beads\BeadsController@addFavorites']);

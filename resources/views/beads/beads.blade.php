@@ -6,7 +6,7 @@
 
     @foreach( $beads as $bead)
     <name>
-        <H2><a href = {{'beads'.$bead->id}}> {{ $bead->name_description }}</a></H2>
+        <H2><a href = {{'/beads/'.$bead->id}}> {{ $bead->name_description }}</a></H2>
     </name>
 
     <H3>{{ $bead->name }}</H3>
