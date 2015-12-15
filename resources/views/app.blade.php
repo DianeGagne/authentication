@@ -9,9 +9,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
-	<div class="container">
-
+<!--create the user favorites-->
+<div style="height:150px;">
+	@if(Auth::user())
+		{{Auth::user()->name}}
+	@endif
+</div>
 		@yield('content')
-	</div>
 </body>
 </html>

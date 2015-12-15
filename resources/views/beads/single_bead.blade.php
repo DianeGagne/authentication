@@ -16,9 +16,10 @@
 
     @if(Auth::check())
         <div class="form-group">
+            {!! Form::open(array('route' => 'favorites.addFavorites')) !!}
+            {!! Form::hidden('bead_id', $bead->beads_id) !!}
             {!! Form::submit('Add to favorites', ['class' => 'btn btn-primary form-control']) !!}
         </div>
-        <!--a href="{{ URL::route('login') }}" class="btn btn-info btn-block">Add to {{Auth::user()->name}}'s favorites</a-->
     @else
         <a href="{{ URL::route('login') }}" class="btn btn-info btn-block">Login</a>
     @endif

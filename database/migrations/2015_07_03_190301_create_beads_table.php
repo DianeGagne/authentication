@@ -20,8 +20,6 @@ class CreateBeadsTable extends Migration
             $table->integer('red');
             $table->integer('green');
             $table->integer('blue');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
             $table->string('image_file');
         });
     }
