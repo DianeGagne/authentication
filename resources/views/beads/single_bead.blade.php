@@ -6,7 +6,7 @@
 
     <h1>{{$bead->name_description}} </h1>
 
-    <img src={{asset($bead->image_file)}}>
+    <img src={{asset($bead->image())}}>
     <H3>{{ $bead->name }}</H3>
 
     @foreach($bead->finishes as $finish)
@@ -17,7 +17,7 @@
     @if(Auth::check())
         <div class="form-group">
             {!! Form::open(array('route' => 'favorites.addFavorites')) !!}
-            {!! Form::hidden('bead_id', $bead->beads_id) !!}
+            {!! Form::hidden('bead_id', $bead->id) !!}
             {!! Form::submit('Add to favorites', ['class' => 'btn btn-primary form-control']) !!}
         </div>
     @else

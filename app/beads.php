@@ -16,4 +16,13 @@ class beads extends Model
     {
         return $this->belongsToMany('App\finishes');
     }
+
+    public function userFavorites()
+    {
+        return $this->hasMany('App\userFavorites');
+    }
+
+    public function image(){
+        return 'assets/delica11/'.$this->image_file.'.jpg';
+    }
 }

@@ -54,16 +54,25 @@ class BeadsController extends Controller
         $bead = Beads::findOrFail($id);
 
         //update the image to contain the full link
-        $bead->image_file = 'assets/delica11/'.$bead->image_file.'.jpg';
+       // $bead->image_file = 'assets/delica11/'.$bead->image_file.'.jpg';
 
         //get a list of the finishes
         $finish = $bead->finishes->lists('name');
 
+        //dd(Auth::user()->userFavorites);
         //get a list of the favorites
+        $userFavorites = Auth::user()->userFavorites;
+       // dd($user);
+        //foreach($userFavorites as $favorite){
+           // dd($favorite->beads);
+        //}
 
+        $data['bead'] = $bead;
+        $data['userFavorites'] = $userFavorites;
 
+       // dd($data);
         //return $finish;
-        return view('beads.single_bead')->with('bead', $bead);
+        return view('beads.single_bead')->with($data);
     }
 
 
@@ -77,11 +86,16 @@ class BeadsController extends Controller
         $beads = Beads::all();
 
         //update the returned image file to include the full path
-        foreach ($beads as $single_bead) {
-            $single_bead->image_file = 'assets/delica11/' . $single_bead->image_file . '.jpg';
+      //  foreach ($beads as $single_bead) {
+      //      $single_bead->image_file = 'assets/delica11/' . $single_bead->image_file . '.jpg';
            // dd($single_bead);
-        }
-        return view('beads.beads')->with('beads', $beads);
+       // }
+
+        $userFavorites = Auth::user()->userFavorites;
+        $data['beads'] = $beads;
+        $data['userFavorites'] = $userFavorites;
+
+        return view('beads.beads')->with($data);
     }
 
     public function addFavorites()
@@ -89,11 +103,11 @@ class BeadsController extends Controller
       //  dd(Auth::user()->id);
         $favorites = new userFavorites();
 
-        $favorites->users_id = Auth::user()->id;
+        $favorites->user_id = Auth::user()->id;
         //dd($favorites);
        // dd(Input::get());
         $favorites->beads_id = Input::get('bead_id');
-
+       // dd($favorites);
         //$favorites;
         $favorites->save();
         //dd(Auth::user()->id);

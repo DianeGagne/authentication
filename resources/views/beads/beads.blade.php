@@ -5,13 +5,21 @@
 
     @foreach( $beads as $bead)
 
-    <div class="col-md-2">
-        <name>
-            <H3><a href = {{'/beads/'.$bead->id}}> {{ $bead->name_description }}</a></H3>
-        </name>
+        <div class="col-md-2 col-sm-3 col-xs-6 bead-column">
+            <a href= {{'/beads/'.$bead->id}}>
+                <div class="bead-list-block">
+                    <div class="bead-name-description">
+                        {{ $bead->name_description }}
+                    </div>
 
-        <H4>{{ $bead->name }}</H4>
-        <img src={{asset($bead->image_file)}}>
-    </div>
+                    <div class="bead-name">{{ $bead->name }}</div>
+
+
+                    <div class="image-block">
+                        <img src={{asset($bead->image())}}>
+                    </div>
+                </div>
+            </a>
+        </div>
     @endforeach
 @stop
